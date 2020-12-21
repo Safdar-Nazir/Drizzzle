@@ -32,11 +32,11 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Text(
                     'SadiqAbad',
-                    style: kTextTitleStyle,
+                    style: kTitleText,
                   ),
                   Text(
                     'Pakistan',
-                    style: kSubtitleText,
+                    style: kBodyText,
                   ),
                 ],
               ),
@@ -44,7 +44,7 @@ class _HomePageState extends State<HomePage> {
             Expanded(
               child: Text(
                 '23',
-                style: kLargeTextTitleStyle,
+                style: kHeadingText,
               ),
             ),
             Expanded(
