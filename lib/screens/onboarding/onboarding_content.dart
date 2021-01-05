@@ -18,11 +18,16 @@ class OnBoardingContent extends StatelessWidget {
         Spacer(),
         Text(
           'Drizzzle',
-          style: kTitleText,
+          style: kTitleText.copyWith(
+            fontSize: getScreenHeight(32.0),
+          ),
         ),
         Text(
           text,
-          style: kBodyText,
+          style: kBodyText.copyWith(
+            fontSize: getScreenHeight(14),
+            color: Colors.black54,
+          ),
         ),
         Spacer(
           flex: 2,

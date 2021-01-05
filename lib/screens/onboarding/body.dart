@@ -3,6 +3,8 @@ import 'package:drizzzle_app/utilities/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:drizzzle_app/screens/onboarding/onboarding_content.dart';
 
+import '../home_page.dart';
+
 class Body extends StatefulWidget {
   @override
   _BodyState createState() => _BodyState();
@@ -65,7 +67,12 @@ class _BodyState extends State<Body> {
                     width: double.infinity,
                     height: getScreenHeight(60),
                     child: FlatButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return HomePage();
+                        }));
+                      },
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
