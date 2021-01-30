@@ -1,6 +1,5 @@
 // Color Constants
 
-import 'package:drizzzle_app/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 

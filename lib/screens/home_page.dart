@@ -1,6 +1,6 @@
 import 'package:drizzzle_app/utilities/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+
 import '../services/location.dart';
 import '../size_config.dart';
 
@@ -13,101 +13,123 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   Location location = Location();
+  var weatherData;
 
   @override
   void initState() {
     super.initState();
-    location.getLocationData();
+    weatherData = location.getLocationData();
+
+    print(weatherData);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue[600],
       body: SafeArea(
         child: Column(
           children: [
             Expanded(
-              child: Container(color: Colors.green),
-              // child: Column(
-              //   mainAxisAlignment: MainAxisAlignment.center,
-              //   children: [
-              //     Text(
-              //       'SadiqAbad',
-              //       style: kTitleText.copyWith(
-              //         fontSize: getScreenHeight(32),
-              //         letterSpacing: 1.2,
-              //       ),
-              //     ),
-              //     Text(
-              //       'Pakistan',
-              //       style: kBodyText.copyWith(
-              //         fontSize: getScreenHeight(17),
-              //       ),
-              //     ),
-              //   ],
-              // ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'SadiqAbad',
+                    style: kTitleText.copyWith(
+                      fontSize: getScreenHeight(32),
+                      letterSpacing: 1.2,
+                    ),
+                  ),
+                  Text(
+                    'Pakistan',
+                    style: kBodyText.copyWith(
+                      fontSize: getScreenHeight(17),
+                    ),
+                  ),
+                ],
+              ),
             ),
             Expanded(
-              child: Container(color: Colors.red),
-              // child: Text(
-              //   '23°C',
-              //   style: kHeadingText.copyWith(
-              //     fontSize: getScreenHeight(100),
-              //   ),
-              // ),
+              flex: 2,
+              // child: Container(color: Colors.red),
+              child: Center(
+                child: Text(
+                  '23°C',
+                  style: kHeadingText.copyWith(
+                    fontSize: getScreenHeight(100),
+                  ),
+                ),
+              ),
             ),
             Expanded(
-              child: Container(color: Colors.orange),
-              // child: SvgPicture.asset(
-              //   'assets/svgs/rainy-6.svg',
-              //   semanticsLabel: 'Cloudy',
-              //   width: getScreenWidth(400),
-              //   height: getScreenHeight(300),
-              //   fit: BoxFit.cover,
-              // ),
-            ),
-            Expanded(
-              child: Container(color: Colors.red),
-              // child: Row(
-              //   mainAxisAlignment: MainAxisAlignment.spaceAround,
-              //   crossAxisAlignment: CrossAxisAlignment.center,
-              //   children: [
-              //     SizedBox(height: double.infinity),
-              //     Column(
-              //       children: [
-              //         Text('Wind'),
-              //         Text(
-              //           '9km/h',
-              //         )
-              //       ],
-              //     ),
-              //     Column(
-              //       children: [
-              //         Text('Humidity'),
-              //         Text(
-              //           '79%',
-              //         )
-              //       ],
-              //     ),
-              //     Column(
-              //       children: [
-              //         Text('Lowest Temparature'),
-              //         Text(
-              //           '19',
-              //         )
-              //       ],
-              //     ),
-              //     Column(
-              //       children: [
-              //         Text('Higest Temparature'),
-              //         Text(
-              //           '25',
-              //         )
-              //       ],
-              //     ),
-              //   ],
-              // ),
+              // child: Container(color: Colors.red),
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: getScreenWidth(10),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Column(
+                      children: [
+                        Text(
+                          'Wind',
+                          style: TextStyle(
+                            fontSize: getScreenWidth(13),
+                            color: Colors.black54,
+                          ),
+                        ),
+                        Text(
+                          '9km/h',
+                          style: TextStyle(
+                            fontSize: getScreenWidth(20),
+                            fontWeight: FontWeight.w600,
+                            color: kPrimaryColor,
+                          ),
+                        )
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Text(
+                          'Condition',
+                          style: TextStyle(
+                            fontSize: getScreenWidth(13),
+                            color: Colors.black54,
+                          ),
+                        ),
+                        Text(
+                          'Raining',
+                          style: TextStyle(
+                            fontSize: getScreenWidth(20),
+                            fontWeight: FontWeight.w600,
+                            color: kPrimaryColor,
+                          ),
+                        )
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Text(
+                          'Humidity',
+                          style: TextStyle(
+                            fontSize: getScreenWidth(13),
+                            color: Colors.black54,
+                          ),
+                        ),
+                        Text(
+                          '79%',
+                          style: TextStyle(
+                            fontSize: getScreenWidth(20),
+                            fontWeight: FontWeight.w600,
+                            color: kPrimaryColor,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
             )
           ],
         ),

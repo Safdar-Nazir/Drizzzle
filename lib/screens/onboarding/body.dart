@@ -49,7 +49,6 @@ class _BodyState extends State<Body> {
             ),
           ),
           Expanded(
-            flex: 2,
             child: Column(
               children: [
                 Spacer(),
@@ -58,11 +57,9 @@ class _BodyState extends State<Body> {
                   children: List.generate(
                       onBoardingContent.length, (index) => buildDot(index)),
                 ),
-                Spacer(
-                  flex: 4,
-                ),
+                Spacer(),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: getScreenWidth(20)),
+                  padding: EdgeInsets.symmetric(horizontal: getScreenWidth(40)),
                   child: SizedBox(
                     width: double.infinity,
                     height: getScreenHeight(60),

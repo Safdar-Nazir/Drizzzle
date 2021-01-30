@@ -25,8 +25,9 @@ class OnBoardingContent extends StatelessWidget {
         Text(
           text,
           style: kBodyText.copyWith(
-            fontSize: getScreenHeight(14),
+            fontSize: getScreenHeight(15),
             color: Colors.black54,
+            fontWeight: FontWeight.w500,
           ),
         ),
         Spacer(
@@ -37,6 +38,7 @@ class OnBoardingContent extends StatelessWidget {
           height: getScreenHeight(265),
           width: getScreenWidth(400),
         ),
+        Spacer(),
       ],
     );
   }

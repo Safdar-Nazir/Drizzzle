@@ -11,7 +11,7 @@ class Location {
   http.Response response;
   var weatherData;
 
-// Getting Device's Location and Weather Data using API.
+// Getting Device's Location and Weather Data using Open Weather API.
 
   Future<void> getLocationData() async {
     try {
@@ -19,24 +19,11 @@ class Location {
           desiredAccuracy: LocationAccuracy.low);
       longitute = position.longitude;
       latitude = position.latitude;
-    } catch (e) {
-      print(e);
-    }
-    try {
       response = await http.get(
           'http://api.openweathermap.org/data/2.5/weather?lat=$latitude&lon=$longitute&appid=$apiKey');
-      print(response.body);
       weatherData = jsonDecode(response.body);
     } catch (e) {
       print(e);
     }
   }
 }
-
-// decoration: BoxDecoration(
-//   gradient: LinearGradient(
-//     colors: [Color(kPrimaryColor), Color(kSecondaryColor)],
-//     begin: Alignment.topRight,
-//     end: Alignment.bottomLeft,
-//   ),
-// ),
