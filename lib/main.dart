@@ -1,5 +1,5 @@
+import 'package:drizzzle_app/screens/on_boarding_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:drizzzle_app/screens/onboarding/on_boarding.dart';
 
 void main() {
   runApp(MyApp());

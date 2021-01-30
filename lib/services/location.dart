@@ -1,29 +1,33 @@
-// In this file we are getting Location of the user.
+// // In this file we are getting Location of the user.
 
-import 'dart:convert';
-import 'package:drizzzle_app/utilities/constants.dart';
-import 'package:http/http.dart' as http;
-import 'package:geolocator/geolocator.dart';
+// import 'package:drizzzle_app/services/networking.dart';
+// import 'package:drizzzle_app/utilities/constants.dart';
+// import 'package:flutter/material.dart';
+// import 'package:flutter/widgets.dart';
 
-class Location {
-  double longitute;
-  double latitude;
-  http.Response response;
-  var weatherData;
+// import 'package:http/http.dart' as http;
+// import 'package:geolocator/geolocator.dart';
 
-// Getting Device's Location and Weather Data using Open Weather API.
+// class Location {
+//   double longitude, latitude;
+//   http.Response response;
+//   var weatherData;
 
-  Future<void> getLocationData() async {
-    try {
-      Position position = await Geolocator.getCurrentPosition(
-          desiredAccuracy: LocationAccuracy.low);
-      longitute = position.longitude;
-      latitude = position.latitude;
-      response = await http.get(
-          'http://api.openweathermap.org/data/2.5/weather?lat=$latitude&lon=$longitute&appid=$apiKey');
-      weatherData = jsonDecode(response.body);
-    } catch (e) {
-      print(e);
-    }
-  }
-}
+// // Getting Device's Location.
+
+//   Future<void> getLocation() async {
+//     try {
+//       Position position = await Geolocator.getCurrentPosition(
+//           desiredAccuracy: LocationAccuracy.low);
+//       longitude = position.longitude;
+//       latitude = position.latitude;
+//       String url =
+//           'http://api.openweathermap.org/data/2.5/weather?lat=$latitude&lon=$longitude&appid=$apiKey';
+//       NetworkHelper networkHelper = NetworkHelper(url);
+//       weatherData = await networkHelper.getWeatherData();
+//       // print(weatherData);
+//     } catch (e) {
+//       print(e);
+//     }
+//   }
+// }

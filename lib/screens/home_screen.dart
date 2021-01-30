@@ -1,26 +1,33 @@
 import 'package:drizzzle_app/utilities/constants.dart';
 import 'package:flutter/material.dart';
-
-import '../services/location.dart';
 import '../size_config.dart';
 
-class HomePage extends StatefulWidget {
-  HomePage();
-
+class HomeScreen extends StatefulWidget {
+  HomeScreen({this.locationWeather});
+  final locationWeather;
   @override
-  _HomePageState createState() => _HomePageState();
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _HomePageState extends State<HomePage> {
-  Location location = Location();
-  var weatherData;
-
+class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    weatherData = location.getLocationData();
+    updateUI(widget.locationWeather);
+  }
 
-    print(weatherData);
+  int temparature, visibility, humidity, wind;
+  String city, country;
+
+  void updateUI(dynamic weatherData) {
+    double tempwind = weatherData['wind']['speed'];
+    wind = tempwind.toInt();
+    double temp = weatherData['main']['temp'];
+    temparature = temp.toInt();
+    city = weatherData['name'];
+    country = weatherData['sys']['country'];
+    visibility = weatherData['visibility'];
+    humidity = weatherData['main']['humidity'];
   }
 
   @override
@@ -34,27 +41,29 @@ class _HomePageState extends State<HomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'SadiqAbad',
+                    city,
                     style: kTitleText.copyWith(
                       fontSize: getScreenHeight(32),
                       letterSpacing: 1.2,
                     ),
                   ),
+                  SizedBox(
+                    height: getScreenHeight(5),
+                  ),
                   Text(
-                    'Pakistan',
+                    country,
                     style: kBodyText.copyWith(
-                      fontSize: getScreenHeight(17),
+                      fontSize: getScreenHeight(18),
                     ),
                   ),
                 ],
               ),
             ),
             Expanded(
-              flex: 2,
-              // child: Container(color: Colors.red),
+              flex: 3,
               child: Center(
                 child: Text(
-                  '23°C',
+                  '$temparature°C',
                   style: kHeadingText.copyWith(
                     fontSize: getScreenHeight(100),
                   ),
@@ -62,7 +71,6 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Expanded(
-              // child: Container(color: Colors.red),
               child: Padding(
                 padding: EdgeInsets.symmetric(
                   horizontal: getScreenWidth(10),
@@ -80,7 +88,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                         Text(
-                          '9km/h',
+                          '$wind km/h',
                           style: TextStyle(
                             fontSize: getScreenWidth(20),
                             fontWeight: FontWeight.w600,
@@ -92,14 +100,14 @@ class _HomePageState extends State<HomePage> {
                     Column(
                       children: [
                         Text(
-                          'Condition',
+                          'Visibility',
                           style: TextStyle(
                             fontSize: getScreenWidth(13),
                             color: Colors.black54,
                           ),
                         ),
                         Text(
-                          'Raining',
+                          '$visibility m',
                           style: TextStyle(
                             fontSize: getScreenWidth(20),
                             fontWeight: FontWeight.w600,
@@ -118,7 +126,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                         Text(
-                          '79%',
+                          '$humidity%',
                           style: TextStyle(
                             fontSize: getScreenWidth(20),
                             fontWeight: FontWeight.w600,
