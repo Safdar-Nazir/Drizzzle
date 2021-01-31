@@ -1,5 +1,5 @@
 import 'package:drizzzle_app/screens/loading_screen.dart';
-import 'package:drizzzle_app/size_config.dart';
+import 'package:drizzzle_app/utilities/size_config.dart';
 import 'package:drizzzle_app/utilities/constants.dart';
 import 'package:drizzzle_app/widgets/onboarding_content.dart';
 import 'package:flutter/material.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:drizzzle_app/utilities/constants.dart';
-import 'package:drizzzle_app/size_config.dart';
+import 'package:drizzzle_app/utilities/size_config.dart';
 
 class OnBoardingContent extends StatelessWidget {
   const OnBoardingContent({
@@ -19,13 +19,13 @@ class OnBoardingContent extends StatelessWidget {
         Text(
           'Drizzzle',
           style: kTitleText.copyWith(
-            fontSize: getScreenHeight(32.0),
+            fontSize: getScreenHeight(24.0),
           ),
         ),
         Text(
           text,
           style: kBodyText.copyWith(
-            fontSize: getScreenHeight(15),
+            fontSize: getScreenHeight(13),
             color: Colors.black54,
             fontWeight: FontWeight.w500,
           ),
