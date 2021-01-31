@@ -1,16 +1,24 @@
-# drizzzle_app
+# Drizzzle
 
-A new Flutter project.
+A new Flutter project to practice working with third party API's.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+In this project. I have used OpenWeather Api to fetch the Weather  of a given location.
 
-A few resources to get you started if this is your first Flutter project:
+## Working
+Following is the working of the Drizzzle App.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+<img src="https://github.com/Safdar-Nazir/Images/blob/master/Drizzzle%20Demonstration.gif" width="300">
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Breakdown
+Here are breakdown of the app
+ - Get device Location
+ - Get device Internet Access
+ - Pass the obtained location to OpenWeather Api
+ - Fetch the json file from OpenWeather
+ - Decode the json file
+and you are done.
+
+
+Happy Coding!
